@@ -1,20 +1,11 @@
 import React from "react";
 
-type SquareStateType = {
-  value: "string" | null;
-};
-
-class Square extends React.Component<
-  { value: string | null; onClick: any },
-  { value: string | null }
-> {
-  render() {
-    return (
-      <button className="square" onClick={() => this.props.onClick()}>
-        {this.props.value}
-      </button>
-    );
-  }
+function Square(props: { value: string; onClick: any }): JSX.Element {
+  return (
+    <button className="square" onClick={() => props.onClick()}>
+      {props.value}
+    </button>
+  );
 }
 
 export default Square;

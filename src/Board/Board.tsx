@@ -1,10 +1,6 @@
 import React from "react";
 import Square from "../Square/Square";
 
-type BoardPropsType = {
-  value: string | null;
-};
-
 class Board extends React.Component<{}, { squares: any[] }> {
   constructor(props: Readonly<{}>) {
     super(props);
@@ -21,7 +17,6 @@ class Board extends React.Component<{}, { squares: any[] }> {
   renderSquare(id: number) {
     return (
       <Square
-        key={id}
         value={this.state.squares[id]}
         onClick={() => this.handleClick(id)}
       />
